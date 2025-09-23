@@ -19,8 +19,8 @@ const Contact = () => {
                 <div>
                   <p className="font-medium">Address</p>
                   <p className="text-sm text-muted-foreground">
-                    123, Medical Complex, Sector 15,<br />
-                    New Delhi - 110001
+                    Dr Farooq Shaheed Chock,<br />
+                    Chichawatni
                   </p>
                 </div>
               </div>
@@ -28,14 +28,14 @@ const Contact = () => {
                 <Phone className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-sm text-muted-foreground">03047922205</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-sm text-muted-foreground">info@medilab.com</p>
+                  <p className="text-sm text-muted-foreground">info@mianmedicalcomplex.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">

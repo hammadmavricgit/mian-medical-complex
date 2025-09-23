@@ -95,7 +95,7 @@ const Index = () => {
       {/* Why Choose Us */}
       <section className="py-16 bg-gradient-to-r from-primary-light to-accent-light">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-heading font-bold text-center mb-12">Why Choose MediLab?</h2>
+          <h2 className="text-3xl font-heading font-bold text-center mb-12">Why Choose MMC?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {

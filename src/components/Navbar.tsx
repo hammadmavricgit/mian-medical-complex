@@ -35,8 +35,8 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-2">
             <FlaskConical className="h-8 w-8 text-primary" />
             <div>
-              <span className="font-heading font-bold text-xl text-primary">MediLab</span>
-              <span className="block text-xs text-muted-foreground">Diagnostics</span>
+              <span className="font-heading font-bold text-xl text-primary">MMC</span>
+              <span className="block text-xs text-muted-foreground">Mian Medical Complex</span>
             </div>
           </Link>
 
@@ -62,7 +62,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-3">
             <Button variant="outline" size="sm" className="gap-2">
               <Phone className="h-4 w-4" />
-              +91 98765 43210
+              03047922205
             </Button>
             <Button variant="hero" size="sm">
               Book Now

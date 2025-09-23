@@ -21,12 +21,12 @@ const Footer = () => {
             <div className="flex items-center space-x-2 mb-4">
               <FlaskConical className="h-8 w-8 text-primary" />
               <div>
-                <span className="font-heading font-bold text-xl text-primary">MediLab</span>
-                <span className="block text-xs text-muted-foreground">Diagnostics</span>
+                <span className="font-heading font-bold text-xl text-primary">MMC</span>
+                <span className="block text-xs text-muted-foreground">Mian Medical Complex</span>
               </div>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
-              ISO Certified Laboratory with Latest Technology. Providing accurate test results at affordable prices since 2010.
+              ISO Certified Medical Complex with Latest Technology. Providing accurate test results at affordable prices since 2010.
             </p>
             <div className="flex gap-3">
               <a href="#" className="p-2 rounded-lg bg-primary-light hover:bg-primary hover:text-white transition-all">
@@ -75,17 +75,17 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-primary mt-1" />
                 <span className="text-sm text-muted-foreground">
-                  123, Medical Complex, Sector 15,<br />
-                  New Delhi - 110001
+                  Dr Farooq Shaheed Chock,<br />
+                  Chichawatni
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-sm text-muted-foreground">+91 98765 43210</span>
+                <span className="text-sm text-muted-foreground">03047922205</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-sm text-muted-foreground">info@medilab.com</span>
+                <span className="text-sm text-muted-foreground">info@mianmedicalcomplex.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="h-4 w-4 text-primary" />
@@ -99,7 +99,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2024 MediLab Diagnostics. All rights reserved.
+              © 2024 Mian Medical Complex. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary">Privacy Policy</Link>
