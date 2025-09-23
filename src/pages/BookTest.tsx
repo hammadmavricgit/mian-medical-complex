@@ -7,10 +7,22 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-import { 
+import {
   Calendar,
   Clock,
   Home,
@@ -20,7 +32,7 @@ import {
   Mail,
   MapPin,
   CreditCard,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
 
 const formSchema = z.object({
@@ -57,14 +69,22 @@ const BookTest = () => {
   });
 
   const availableTests = [
-    { id: "cbc", name: "Complete Blood Count (CBC)", price: 299 },
-    { id: "lipid", name: "Lipid Profile", price: 599 },
-    { id: "thyroid", name: "Thyroid Profile", price: 899 },
-    { id: "hba1c", name: "HbA1c (Diabetes)", price: 449 },
-    { id: "lft", name: "Liver Function Test", price: 699 },
-    { id: "kft", name: "Kidney Function Test", price: 649 },
-    { id: "vitd", name: "Vitamin D", price: 899 },
-    { id: "vitb12", name: "Vitamin B12", price: 749 },
+    { id: "cbc", name: "CBC", price: 250 },
+    { id: "lfts", name: "LFTs", price: 400 },
+    { id: "rfts", name: "RFTs", price: 400 },
+    { id: "lipid", name: "Lipid Profile", price: 500 },
+    { id: "sugar", name: "Sugar", price: 200 },
+    { id: "uric", name: "Uric Acid", price: 200 },
+    { id: "hbsag", name: "HBsAg", price: 200 },
+    { id: "hcv", name: "HCV", price: 250 },
+    { id: "hpylori", name: "H. pylori", price: 250 },
+    { id: "hba1c", name: "HbA1c", price: 600 },
+    { id: "electrolytes", name: "S/Electrolytes", price: 700 },
+    { id: "tb", name: "TB. Screening", price: 250 },
+    { id: "afb", name: "Sputum AFB", price: 0 },
+    { id: "vdrl", name: "VDRL Screening", price: 250 },
+    { id: "hiv", name: "HIV Screening", price: 250 },
+    { id: "urinedr", name: "Urine/DR", price: 250 },
   ];
 
   const timeSlots = [
@@ -83,16 +103,16 @@ const BookTest = () => {
     if (checked) {
       newSelectedTests.push(testId);
     } else {
-      newSelectedTests = newSelectedTests.filter(id => id !== testId);
+      newSelectedTests = newSelectedTests.filter((id) => id !== testId);
     }
     setSelectedTests(newSelectedTests);
-    
+
     const newTotal = newSelectedTests.reduce((sum, id) => {
-      const test = availableTests.find(t => t.id === id);
+      const test = availableTests.find((t) => t.id === id);
       return sum + (test?.price || 0);
     }, 0);
     setTotalPrice(newTotal);
-    
+
     form.setValue("tests", newSelectedTests);
   };
 
@@ -110,7 +130,9 @@ const BookTest = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-heading font-bold mb-4">Book Your Test Online</h1>
+            <h1 className="text-4xl font-heading font-bold mb-4">
+              Book Your Test Online
+            </h1>
             <p className="text-xl text-muted-foreground">
               Simple booking process with home collection option
             </p>
@@ -124,7 +146,9 @@ const BookTest = () => {
                   <User className="h-5 w-5 text-primary" />
                   Personal Information
                 </CardTitle>
-                <CardDescription>Please provide your basic details</CardDescription>
+                <CardDescription>
+                  Please provide your basic details
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -155,7 +179,11 @@ const BookTest = () => {
                     </div>
                     <div>
                       <Label htmlFor="gender">Gender *</Label>
-                      <Select onValueChange={(value) => form.setValue("gender", value)}>
+                      <Select
+                        onValueChange={(value) =>
+                          form.setValue("gender", value)
+                        }
+                      >
                         <SelectTrigger className="mt-1">
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
@@ -206,23 +234,32 @@ const BookTest = () => {
                   <CheckCircle className="h-5 w-5 text-primary" />
                   Select Tests
                 </CardTitle>
-                <CardDescription>Choose the tests you want to book</CardDescription>
+                <CardDescription>
+                  Choose the tests you want to book
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {availableTests.map(test => (
-                    <div key={test.id} className="flex items-center space-x-2 p-3 border rounded-lg hover:bg-muted">
+                  {availableTests.map((test) => (
+                    <div
+                      key={test.id}
+                      className="flex items-center space-x-2 p-3 border rounded-lg hover:bg-muted"
+                    >
                       <Checkbox
                         id={test.id}
                         checked={selectedTests.includes(test.id)}
-                        onCheckedChange={(checked) => handleTestSelection(test.id, checked as boolean)}
+                        onCheckedChange={(checked) =>
+                          handleTestSelection(test.id, checked as boolean)
+                        }
                       />
                       <Label
                         htmlFor={test.id}
                         className="flex-1 cursor-pointer flex justify-between items-center"
                       >
                         <span>{test.name}</span>
-                        <span className="font-semibold text-primary">PKR {test.price}</span>
+                        <span className="font-semibold text-primary">
+                          PKR {test.price}
+                        </span>
                       </Label>
                     </div>
                   ))}
@@ -230,8 +267,12 @@ const BookTest = () => {
                 {totalPrice > 0 && (
                   <div className="mt-6 p-4 bg-primary-light rounded-lg">
                     <div className="flex justify-between items-center">
-                      <span className="text-lg font-semibold">Total Amount:</span>
-                      <span className="text-2xl font-bold text-primary">PKR {totalPrice}</span>
+                      <span className="text-lg font-semibold">
+                        Total Amount:
+                      </span>
+                      <span className="text-2xl font-bold text-primary">
+                        PKR {totalPrice}
+                      </span>
                     </div>
                   </div>
                 )}
@@ -245,14 +286,18 @@ const BookTest = () => {
                   <MapPin className="h-5 w-5 text-primary" />
                   Collection Details
                 </CardTitle>
-                <CardDescription>Choose how you'd like to give your sample</CardDescription>
+                <CardDescription>
+                  Choose how you'd like to give your sample
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <Label>Collection Type *</Label>
                   <RadioGroup
                     defaultValue="home"
-                    onValueChange={(value) => form.setValue("collectionType", value)}
+                    onValueChange={(value) =>
+                      form.setValue("collectionType", value)
+                    }
                     className="mt-2"
                   >
                     <div className="flex items-center space-x-2 p-3 border rounded-lg">
@@ -262,7 +307,9 @@ const BookTest = () => {
                           <Home className="h-4 w-4 text-primary" />
                           <span className="font-medium">Home Collection</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">Our phlebotomist will visit your home</p>
+                        <p className="text-sm text-muted-foreground">
+                          Our phlebotomist will visit your home
+                        </p>
                       </Label>
                     </div>
                     <div className="flex items-center space-x-2 p-3 border rounded-lg">
@@ -272,7 +319,9 @@ const BookTest = () => {
                           <Building className="h-4 w-4 text-primary" />
                           <span className="font-medium">Visit Lab</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">Visit our lab for sample collection</p>
+                        <p className="text-sm text-muted-foreground">
+                          Visit our lab for sample collection
+                        </p>
                       </Label>
                     </div>
                   </RadioGroup>
@@ -301,18 +350,22 @@ const BookTest = () => {
                         type="date"
                         {...form.register("preferredDate")}
                         className="pl-9"
-                        min={new Date().toISOString().split('T')[0]}
+                        min={new Date().toISOString().split("T")[0]}
                       />
                     </div>
                   </div>
                   <div>
                     <Label htmlFor="time">Preferred Time Slot *</Label>
-                    <Select onValueChange={(value) => form.setValue("preferredTime", value)}>
+                    <Select
+                      onValueChange={(value) =>
+                        form.setValue("preferredTime", value)
+                      }
+                    >
                       <SelectTrigger className="mt-1">
                         <SelectValue placeholder="Select time slot" />
                       </SelectTrigger>
                       <SelectContent>
-                        {timeSlots.map(slot => (
+                        {timeSlots.map((slot) => (
                           <SelectItem key={slot} value={slot}>
                             <div className="flex items-center gap-2">
                               <Clock className="h-4 w-4" />
@@ -334,7 +387,9 @@ const BookTest = () => {
                   <CreditCard className="h-5 w-5 text-primary" />
                   Payment Method
                 </CardTitle>
-                <CardDescription>Choose your preferred payment option</CardDescription>
+                <CardDescription>
+                  Choose your preferred payment option
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <RadioGroup defaultValue="cash" className="space-y-3">
@@ -342,14 +397,18 @@ const BookTest = () => {
                     <RadioGroupItem value="cash" id="cash" />
                     <Label htmlFor="cash" className="flex-1 cursor-pointer">
                       <span className="font-medium">Cash on Collection</span>
-                      <p className="text-sm text-muted-foreground">Pay when our phlebotomist arrives</p>
+                      <p className="text-sm text-muted-foreground">
+                        Pay when our phlebotomist arrives
+                      </p>
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2 p-3 border rounded-lg">
                     <RadioGroupItem value="online" id="online" />
                     <Label htmlFor="online" className="flex-1 cursor-pointer">
                       <span className="font-medium">Online Payment</span>
-                      <p className="text-sm text-muted-foreground">Pay now using UPI/Card/NetBanking</p>
+                      <p className="text-sm text-muted-foreground">
+                        Pay now using UPI/Card/NetBanking
+                      </p>
                     </Label>
                   </div>
                 </RadioGroup>
