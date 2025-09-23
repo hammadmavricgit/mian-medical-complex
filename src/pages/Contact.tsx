@@ -6,8 +6,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted py-20">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-heading font-bold text-center mb-12">Contact Us</h1>
-        
+        <h1 className="text-4xl font-heading font-bold text-center mb-12">
+          Contact Us
+        </h1>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <Card>
             <CardHeader>
@@ -19,7 +21,8 @@ const Contact = () => {
                 <div>
                   <p className="font-medium">Address</p>
                   <p className="text-sm text-muted-foreground">
-                    Dr Farooq Shaheed Chock,<br />
+                    Block 15, Farooq Shaheed Chock,
+                    <br />
                     Chichawatni
                   </p>
                 </div>
@@ -35,14 +38,18 @@ const Contact = () => {
                 <Mail className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-sm text-muted-foreground">info@mianmedicalcomplex.com</p>
+                  <p className="text-sm text-muted-foreground">
+                    info@mianmedicalcomplex.com
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-medium">Working Hours</p>
-                  <p className="text-sm text-muted-foreground">Mon-Sat: 7AM - 9PM</p>
+                  <p className="text-sm text-muted-foreground">
+                    Mon-Sat: 7AM - 9PM
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -54,10 +61,24 @@ const Contact = () => {
             </CardHeader>
             <CardContent>
               <form className="space-y-4">
-                <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-lg" />
-                <input type="email" placeholder="Your Email" className="w-full p-3 border rounded-lg" />
-                <textarea placeholder="Your Message" rows={4} className="w-full p-3 border rounded-lg resize-none" />
-                <Button variant="hero" className="w-full">Send Message</Button>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full p-3 border rounded-lg"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="w-full p-3 border rounded-lg"
+                />
+                <textarea
+                  placeholder="Your Message"
+                  rows={4}
+                  className="w-full p-3 border rounded-lg resize-none"
+                />
+                <Button variant="hero" className="w-full">
+                  Send Message
+                </Button>
               </form>
             </CardContent>
           </Card>
