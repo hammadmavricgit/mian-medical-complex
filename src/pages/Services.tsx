@@ -255,8 +255,8 @@ const Services = () => {
                         <Badge variant="outline" className="capitalize">{test.category}</Badge>
                       </div>
                       <div className="flex items-baseline gap-3">
-                        <span className="text-2xl font-bold text-primary">₹{test.price}</span>
-                        <span className="text-sm text-muted-foreground line-through">₹{test.marketPrice}</span>
+                        <span className="text-2xl font-bold text-primary">PKR {test.price}</span>
+                        <span className="text-sm text-muted-foreground line-through">PKR {test.marketPrice}</span>
                         <Badge variant="destructive" className="ml-auto">
                           <TrendingDown className="h-3 w-3 mr-1" />
                           {Math.round(((test.marketPrice - test.price) / test.marketPrice) * 100)}% OFF
@@ -317,13 +317,13 @@ const Services = () => {
                       </div>
                       <div className="pt-4 border-t">
                         <div className="flex items-baseline gap-3 mb-4">
-                          <span className="text-3xl font-bold text-primary">₹{pkg.price}</span>
-                          <span className="text-sm text-muted-foreground line-through">₹{pkg.marketPrice}</span>
+                          <span className="text-3xl font-bold text-primary">PKR {pkg.price}</span>
+                          <span className="text-sm text-muted-foreground line-through">PKR {pkg.marketPrice}</span>
                         </div>
                         <div className="flex items-center gap-2 mb-4">
                           <Badge className="bg-success/10 text-success border-success">
                             <DollarSign className="h-3 w-3 mr-1" />
-                            Save ₹{pkg.marketPrice - pkg.price}
+                            Save PKR {pkg.marketPrice - pkg.price}
                           </Badge>
                         </div>
                         <Button 

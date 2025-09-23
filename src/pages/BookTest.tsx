@@ -222,7 +222,7 @@ const BookTest = () => {
                         className="flex-1 cursor-pointer flex justify-between items-center"
                       >
                         <span>{test.name}</span>
-                        <span className="font-semibold text-primary">₹{test.price}</span>
+                        <span className="font-semibold text-primary">PKR {test.price}</span>
                       </Label>
                     </div>
                   ))}
@@ -231,7 +231,7 @@ const BookTest = () => {
                   <div className="mt-6 p-4 bg-primary-light rounded-lg">
                     <div className="flex justify-between items-center">
                       <span className="text-lg font-semibold">Total Amount:</span>
-                      <span className="text-2xl font-bold text-primary">₹{totalPrice}</span>
+                      <span className="text-2xl font-bold text-primary">PKR {totalPrice}</span>
                     </div>
                   </div>
                 )}

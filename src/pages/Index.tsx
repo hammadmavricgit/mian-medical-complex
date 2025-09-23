@@ -78,8 +78,8 @@ const Index = () => {
                   <FlaskConical className="h-10 w-10 text-primary mb-4" />
                   <h3 className="font-semibold text-lg mb-2">{test.name}</h3>
                   <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-2xl font-bold text-primary">₹{test.price}</span>
-                    <span className="text-sm line-through text-muted-foreground">₹{test.mrp}</span>
+                    <span className="text-2xl font-bold text-primary">PKR {test.price}</span>
+                    <span className="text-sm line-through text-muted-foreground">PKR {test.mrp}</span>
                   </div>
                   <Badge variant="secondary" className="mb-4">{test.time} delivery</Badge>
                   <Button variant="medical" className="w-full" asChild>
