@@ -2,16 +2,23 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  FlaskConical, 
-  CheckCircle, 
-  Clock, 
+import LabMainPic from "@/assets/LabMainPic.jpg";
+import DrAdeel from "@/assets/DrAdeel.jpg";
+import DrAhsan from "@/assets/DrAhsan.jpg";
+import DrMuneeb from "@/assets/DrMuneeb.jpg";
+import DrSalman from "@/assets/DrSalman.jpg";
+import DrShahab from "@/assets/DrShahab.jpg";
+import DrUmer from "@/assets/DrUmer.jpg";
+import {
+  FlaskConical,
+  CheckCircle,
+  Clock,
   DollarSign,
   Users,
   Shield,
   Activity,
   ArrowRight,
-  Star
+  Star,
 } from "lucide-react";
 
 const Index = () => {
@@ -25,20 +32,73 @@ const Index = () => {
               ISO Certified Laboratory
             </Badge>
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              Complete Blood Test at <span className="text-accent-light">Minimum Price</span> with Maximum Accuracy
+              Complete Blood Test at{" "}
+              <span className="text-accent-light">Minimum Price</span> with
+              Maximum Accuracy
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              Latest machines, experienced technologists, and results within 24 hours. 
-              Save up to 60% on all laboratory tests.
+              Latest machines, experienced technologists, and results within 24
+              hours. Save up to 60% on all laboratory tests.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="medical" size="lg" asChild>
                 <Link to="/book-test">Book Test Online</Link>
               </Button>
-              <Button variant="outline" size="lg" className="bg-white/10 border-white text-white hover:bg-white hover:text-primary" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-white/10 border-white text-white hover:bg-white hover:text-primary"
+                asChild
+              >
                 <Link to="/services">View All Tests</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Lab Exterior Photo */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="rounded-xl overflow-hidden shadow-md">
+            <img
+              src={LabMainPic}
+              alt="Mian Medical Complex exterior"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Doctors Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-heading font-bold text-center mb-12">
+            Our Doctors
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              { img: DrAdeel, name: "Dr. Adeel", speciality: "Consultant" },
+              { img: DrAhsan, name: "Dr. Ahsan", speciality: "Consultant" },
+              { img: DrMuneeb, name: "Dr. Muneeb", speciality: "Consultant" },
+              { img: DrSalman, name: "Dr. Salman", speciality: "Consultant" },
+              { img: DrShahab, name: "Dr. Shahab", speciality: "Consultant" },
+              { img: DrUmer, name: "Dr. Umer", speciality: "Consultant" },
+            ].map((doc, idx) => (
+              <Card key={idx} className="overflow-hidden text-center">
+                <img
+                  src={doc.img}
+                  alt={doc.name}
+                  className="w-full h-40 object-cover"
+                />
+                <CardContent className="p-4">
+                  <h3 className="font-semibold">{doc.name}</h3>
+                  <p className="text-xs text-muted-foreground">
+                    {doc.speciality}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -51,12 +111,14 @@ const Index = () => {
               { icon: Users, value: "50,000+", label: "Happy Patients" },
               { icon: CheckCircle, value: "100+", label: "Tests Available" },
               { icon: Clock, value: "24 hrs", label: "Result Delivery" },
-              { icon: DollarSign, value: "60%", label: "Cost Savings" }
+              { icon: DollarSign, value: "60%", label: "Cost Savings" },
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
                 <stat.icon className="h-8 w-8 text-primary mx-auto mb-2" />
                 <div className="text-2xl font-bold">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -66,22 +128,35 @@ const Index = () => {
       {/* Popular Tests */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-heading font-bold text-center mb-12">Popular Health Tests</h2>
+          <h2 className="text-3xl font-heading font-bold text-center mb-12">
+            Popular Health Tests
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "Complete Blood Count", price: 299, mrp: 500, time: "4 hours" },
-              { name: "Thyroid Profile", price: 899, mrp: 1400, time: "8 hours" },
-              { name: "Full Body Checkup", price: 3999, mrp: 6500, time: "24 hours" }
+              {
+                name: "Complete Blood Count",
+                price: 250,
+                mrp: 500,
+                time: "4 hours",
+              },
+              { name: "LFTs", price: 500, mrp: 800, time: "8 hours" },
+              { name: "RFTs", price: 450, mrp: 600, time: "24 hours" },
             ].map((test, idx) => (
               <Card key={idx} className="hover:shadow-lg transition-all">
                 <CardContent className="pt-6">
                   <FlaskConical className="h-10 w-10 text-primary mb-4" />
                   <h3 className="font-semibold text-lg mb-2">{test.name}</h3>
                   <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-2xl font-bold text-primary">PKR {test.price}</span>
-                    <span className="text-sm line-through text-muted-foreground">PKR {test.mrp}</span>
+                    <span className="text-2xl font-bold text-primary">
+                      PKR {test.price}
+                    </span>
+                    <span className="text-sm line-through text-muted-foreground">
+                      PKR {test.mrp}
+                    </span>
                   </div>
-                  <Badge variant="secondary" className="mb-4">{test.time} delivery</Badge>
+                  <Badge variant="secondary" className="mb-4">
+                    {test.time} delivery
+                  </Badge>
                   <Button variant="medical" className="w-full" asChild>
                     <Link to="/book-test">Book Now</Link>
                   </Button>
@@ -95,24 +170,26 @@ const Index = () => {
       {/* Why Choose Us */}
       <section className="py-16 bg-gradient-to-r from-primary-light to-accent-light">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-heading font-bold text-center mb-12">Why Choose MMC?</h2>
+          <h2 className="text-3xl font-heading font-bold text-center mb-12">
+            Why Choose MMC?
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: Shield,
                 title: "Latest Technology",
-                desc: "Automated analyzers and PCR machines for accurate results"
+                desc: "Automated analyzers and PCR machines for accurate results",
               },
               {
                 icon: Activity,
                 title: "Expert Team",
-                desc: "Experienced pathologists and certified technologists"
+                desc: "Experienced pathologists and certified technologists",
               },
               {
                 icon: DollarSign,
                 title: "Affordable Pricing",
-                desc: "Lowest prices with no compromise on quality"
-              }
+                desc: "Lowest prices with no compromise on quality",
+              },
             ].map((feature, idx) => (
               <div key={idx} className="text-center">
                 <div className="inline-flex p-4 rounded-full bg-white mb-4">
@@ -129,8 +206,12 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-primary to-accent text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold mb-4">Ready to Book Your Test?</h2>
-          <p className="text-xl mb-8 opacity-90">Get accurate results at unbeatable prices</p>
+          <h2 className="text-3xl font-heading font-bold mb-4">
+            Ready to Book Your Test?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Get accurate results at unbeatable prices
+          </p>
           <Button variant="medical" size="lg" asChild>
             <Link to="/book-test">
               Book Test Now <ArrowRight className="ml-2 h-5 w-5" />

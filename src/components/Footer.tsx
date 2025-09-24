@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import {
-  FlaskConical,
   MapPin,
   Phone,
   Mail,
@@ -10,6 +9,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import LogoSecondary from "@/assets/MMC Logo1.png";
 
 const Footer = () => {
   return (
@@ -18,16 +18,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <FlaskConical className="h-8 w-8 text-primary" />
-              <div>
-                <span className="font-heading font-bold text-xl text-primary">
-                  MMC
-                </span>
-                <span className="block text-xs text-muted-foreground">
-                  Mian Medical Complex
-                </span>
-              </div>
+            <div className="flex items-center space-x-3 mb-4">
+              <img
+                src={LogoSecondary}
+                alt="Mian Medical Complex logo"
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               ISO Certified Medical Complex with Latest Technology. Providing

@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { 
-  Menu, 
-  X, 
-  Phone, 
-  FlaskConical,
+import {
+  Menu,
+  X,
+  Phone,
   Home,
   TestTube,
   Users,
   Mail,
-  Calendar
+  Calendar,
 } from "lucide-react";
+import LogoPrimary from "@/assets/MMC Logo1.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,11 +33,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <FlaskConical className="h-8 w-8 text-primary" />
-            <div>
-              <span className="font-heading font-bold text-xl text-primary">MMC</span>
-              <span className="block text-xs text-muted-foreground">Mian Medical Complex</span>
-            </div>
+            <img
+              src={LogoPrimary}
+              alt="Mian Medical Complex logo"
+              className="h-9 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

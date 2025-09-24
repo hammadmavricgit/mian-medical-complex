@@ -1,18 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Award, Clock, ShieldCheck } from "lucide-react";
+import DrAdeel from "@/assets/DrAdeel.jpg";
+import DrAhsan from "@/assets/DrAhsan.jpg";
+import DrMuneeb from "@/assets/DrMuneeb.jpg";
+import DrSalman from "@/assets/DrSalman.jpg";
+import DrShahab from "@/assets/DrShahab.jpg";
+import DrUmer from "@/assets/DrUmer.jpg";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted py-20">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-heading font-bold text-center mb-12">About MediLab Diagnostics</h1>
-        
+        <h1 className="text-4xl font-heading font-bold text-center mb-12">
+          About MediLab Diagnostics
+        </h1>
+
         <div className="max-w-3xl mx-auto mb-12">
           <p className="text-lg text-muted-foreground text-center">
-            Established in 2010, MediLab Diagnostics has been serving the community with accurate, 
-            affordable, and timely diagnostic services. Our state-of-the-art laboratory is equipped 
-            with the latest technology and operated by experienced professionals.
+            Established in 2010, MediLab Diagnostics has been serving the
+            community with accurate, affordable, and timely diagnostic services.
+            Our state-of-the-art laboratory is equipped with the latest
+            technology and operated by experienced professionals.
           </p>
         </div>
 
@@ -21,7 +30,7 @@ const About = () => {
             { icon: Users, label: "50,000+", desc: "Happy Patients" },
             { icon: Award, label: "ISO Certified", desc: "Quality Assured" },
             { icon: Clock, label: "24 Hours", desc: "Result Delivery" },
-            { icon: ShieldCheck, label: "100%", desc: "Accuracy Rate" }
+            { icon: ShieldCheck, label: "100%", desc: "Accuracy Rate" },
           ].map((stat, idx) => (
             <Card key={idx} className="text-center">
               <CardContent className="pt-6">
@@ -32,6 +41,36 @@ const About = () => {
             </Card>
           ))}
         </div>
+        {/* Doctors Section */}
+        <section className="py-12">
+          <h2 className="text-3xl font-heading font-bold text-center mb-10">
+            Our Doctors
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              { img: DrAdeel, name: "Dr. Adeel", speciality: "Consultant" },
+              { img: DrAhsan, name: "Dr. Ahsan", speciality: "Consultant" },
+              { img: DrMuneeb, name: "Dr. Muneeb", speciality: "Consultant" },
+              { img: DrSalman, name: "Dr. Salman", speciality: "Consultant" },
+              { img: DrShahab, name: "Dr. Shahab", speciality: "Consultant" },
+              { img: DrUmer, name: "Dr. Umer", speciality: "Consultant" },
+            ].map((doc, idx) => (
+              <Card key={idx} className="overflow-hidden text-center">
+                <img
+                  src={doc.img}
+                  alt={doc.name}
+                  className="w-full h-40 object-cover"
+                />
+                <CardContent className="p-4">
+                  <h3 className="font-semibold">{doc.name}</h3>
+                  <p className="text-xs text-muted-foreground">
+                    {doc.speciality}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
