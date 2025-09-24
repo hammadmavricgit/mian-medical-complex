@@ -78,12 +78,33 @@ const Index = () => {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              { img: DrAdeel, name: "Dr. Adeel", speciality: "Consultant" },
-              { img: DrAhsan, name: "Dr. Ahsan", speciality: "Consultant" },
-              { img: DrMuneeb, name: "Dr. Muneeb", speciality: "Consultant" },
-              { img: DrSalman, name: "Dr. Salman", speciality: "Consultant" },
-              { img: DrShahab, name: "Dr. Shahab", speciality: "Consultant" },
-              { img: DrUmer, name: "Dr. Umer", speciality: "Consultant" },
+              { img: DrAdeel, name: "Dr. Adeel", speciality: "ENT Specialist" },
+              {
+                img: DrAhsan,
+                name: "Dr. Ahsan",
+                speciality: "(FCPS Dermatologist",
+              },
+              {
+                img: DrMuneeb,
+                name: "Dr. Muneeb",
+                speciality: "M.D Neurologist",
+              },
+              {
+                img: DrSalman,
+                name: "Dr. Salman",
+                speciality: "Consultant Cardiologist",
+              },
+              {
+                img: DrShahab,
+                name: "Dr. Shahab",
+                speciality: "MCPS Psychiatrist",
+              },
+              { img: DrUmer, name: "Dr. Umer", speciality: "Physician" },
+              {
+                img: null,
+                name: "Dr. Bilawal",
+                speciality: "M.D Cardiologist",
+              },
             ].map((doc, idx) => (
               <Card key={idx} className="overflow-hidden text-center">
                 <img
