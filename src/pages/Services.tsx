@@ -306,7 +306,7 @@ const Services = () => {
           <div className="flex flex-wrap gap-6 text-sm">
             <div className="flex items-center gap-2">
               <CheckCircle className="h-5 w-5" />
-              <span>ISO Certified Lab</span>
+              <span>Certified Lab</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="h-5 w-5" />

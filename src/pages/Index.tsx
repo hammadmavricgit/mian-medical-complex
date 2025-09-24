@@ -29,7 +29,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="max-w-3xl">
             <Badge className="mb-4 bg-white/20 text-white border-white/30">
-              ISO Certified Laboratory
+              Certified Laboratory
             </Badge>
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">
               Complete Blood Test at{" "}

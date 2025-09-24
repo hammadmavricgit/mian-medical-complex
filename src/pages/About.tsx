@@ -28,7 +28,6 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {[
             { icon: Users, label: "50,000+", desc: "Happy Patients" },
-            { icon: Award, label: "ISO Certified", desc: "Quality Assured" },
             { icon: Clock, label: "24 Hours", desc: "Result Delivery" },
             { icon: ShieldCheck, label: "100%", desc: "Accuracy Rate" },
           ].map((stat, idx) => (

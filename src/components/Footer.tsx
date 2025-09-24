@@ -26,8 +26,8 @@ const Footer = () => {
               />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
-              ISO Certified Medical Complex with Latest Technology. Providing
-              accurate test results at affordable prices since 2010.
+              Medical Complex with Latest Technology. Providing accurate test
+              results at affordable prices since 2010.
             </p>
             <div className="flex gap-3">
               <a
